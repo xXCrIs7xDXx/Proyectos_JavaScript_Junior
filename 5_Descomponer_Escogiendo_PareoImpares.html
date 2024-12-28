@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>Descomponer un numero Grande (Pares o Impares)</h2>
+    <p>Introduzca un numero</p>
+    <input id="N" type="number">
+    <button onclick="pares()">Pares</button>
+    <button onclick="impares()">Impares</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function pares() {
+            var N = document.getElementById("N").value;
+            var res="";
+            for (var i = 0; i < N.length; i++) {
+                var digito = parseInt(N.charAt(i));
+                if(digito%2 == 0) {
+                    res = res + digito +" ";
+                }
+            }
+            document.getElementById("resultado").innerHTML ="Los numeros pares son: " + res;
+        }
+
+        function impares(){
+            var N = document.getElementById("N").value;
+            var res="";
+            for (var i = 0; i < N.length; i++) {
+                var digito = parseInt(N.charAt(i));
+                if(digito%2 != 0) {
+                    res = res + digito +" ";
+                }
+            }
+            document.getElementById("resultado").innerHTML ="Los numeros impares son: " + res;
+        }
+        
+    </script>
+</body>
+</html>

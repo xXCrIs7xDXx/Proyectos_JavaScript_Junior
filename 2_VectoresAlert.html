@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Sueldos de las personas</h2>
+
+<button onclick="mostrarSueldos()">Mostrar sueldos</button>
+
+<script>
+let nombres = [];
+let sueldos = [];
+
+function ingresarDatos() {
+    let n = prompt("Ingrese el número de personas:");
+    for (let i = 0; i < n; i++) {
+        let nombre = prompt("Ingrese el nombre de la persona " + (i + 1) + ":");
+        let sueldo = prompt("Ingrese el sueldo de la persona " + (i + 1) + ":");
+        nombres.push(nombre);
+        sueldos.push(parseInt(sueldo));
+    }
+}
+
+function mostrarSueldos() {
+    ingresarDatos();
+    let maxSueldo = Math.max(...sueldos);
+    let minSueldo = Math.min(...sueldos);
+    let personaMaxSueldo = nombres[sueldos.indexOf(maxSueldo)];
+    let personaMinSueldo = nombres[sueldos.indexOf(minSueldo)];
+    alert("La persona con el sueldo más alto es " + personaMaxSueldo + " con un sueldo de " + maxSueldo);
+    alert("La persona con el sueldo más bajo es " + personaMinSueldo + " con un sueldo de " + minSueldo);
+}
+</script>
+
+</body>
+</html>

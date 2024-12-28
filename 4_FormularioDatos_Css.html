@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        h4{
+            text-align: center;
+        }
+
+        form {
+            margin: 0 auto;
+            width: 300px;
+        }
+
+        label {
+            display: block;
+            margin-top: 20px;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="number"] {
+            width: 100%;
+            padding: 6px;
+            margin-top: 5px;
+        }
+
+        input[type="radio"] {
+            margin-top: 10px;
+        }
+
+        button {
+            display: block;
+            margin-top: 20px;
+        }
+
+        #fechaNacimiento {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #sexo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Mi perfil</h2>
+    <h4>Los campos marcados con un asterisco son obligatorios</h4>
+    <form id="miFormulario">
+        
+        <label for="nombre">* Nombre</label>
+        <input type="text" id="nombre" name="nombre" onfocus="enfocar('nombre')">
+
+        <label for="primerApellido">* Primer apellido:</label>
+        <input type="text" id="primerApellido" name="primerApellido" onfocus="enfocar('primerApellido')">
+
+        <label for="segundoApellido">Segundo apellido:</label>
+        <input type="text" id="segundoApellido" name="segundoApellido" onfocus="enfocar('segundoApellido')">
+
+        <label>* Fecha de nacimiento:</label>
+
+        <div id="fechaNacimiento">
+            <select id="dia" name="dia" onfocus="enfocar('dia')">
+                <!-- Opciones para el día -->
+            </select>
+
+            <select id="mes" name="mes" onfocus="enfocar('mes')">
+                <!-- Opciones para el mes -->
+            </select>
+
+            <select id="ano" name="ano" onfocus="enfocar('ano')">
+                <!-- Opciones para el año -->
+            </select>
+        </div>
+
+
+
+        <div id="sexo">
+            <label>Sexo:</label>
+            <input type="radio" id="hombre" name="sexo" value="hombre">
+            <label for="hombre">Hombre</label>
+            <input type="radio" id="mujer" name="sexo" value="mujer">
+            <label for="mujer">Mujer</label><br>
+        </div>
+
+        <label for="telefonoMovil">* Teléfono móvil:</label>
+
+        <input type="number" id="telefonoMovil" name="telefonoMovil" onfocus="enfocar('telefonoMovil')">
+
+        <label for='documentoIdentificacion'>* Documento de identificación:</label>
+
+        <input type='text' id='documentoIdentificacion' name='documentoIdentificacion'
+            onfocus='enfocar("documentoIdentificacion")'>
+
+    </form>
+
+    <p id='mensaje'></p>
+
+    <script>
+
+        function enfocar(id) {
+            document.getElementById("mensaje").innerHTML = "Has enfocado el campo " + id;
+        }
+
+    </script>
+
+</body>
+
+</html>

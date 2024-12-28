@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>Calculadora de Productoria</h2>
+
+    <p>Por favor, introduce los valores de N y M:</p>
+
+    <input id="N" type="number" placeholder="N">
+    <input id="M" type="number" placeholder="M">
+
+    <button onclick="calcular()">Calcular</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcular() {
+            var N = document.getElementById("N").value;
+            var M = document.getElementById("M").value;
+            var productoria = 1;
+            for(var i=1; i<=N; i++) {
+                if(i%2==1){
+                    productoria=productoria*(1/N);
+                }
+                else{
+                    productoria=productoria*M;
+                    M++;
+                }
+            }
+            
+            document.getElementById("resultado").innerHTML = "La productoria es " + productoria + ".";
+        }
+    </script>
+
+</body>
+
+</html>

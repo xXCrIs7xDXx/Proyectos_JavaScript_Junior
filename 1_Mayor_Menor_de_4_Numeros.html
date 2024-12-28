@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mayor y Menor de 4 numeros</title>
+</head>
+
+<body>
+    <h2>Calculadora de mayor y menor número</h2>
+
+    <p>Por favor, introduce cuatro números:</p>
+
+    <input id="num1" type="number">
+    <input id="num2" type="number">
+    <input id="num3" type="number">
+    <input id="num4" type="number">
+
+    <button onclick="calcular()">Calcular</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcular() {
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+            var num3 = document.getElementById("num3").value;
+            var num4 = document.getElementById("num4").value;
+
+            var numeros = [num1, num2, num3, num4];
+            var mayor = numeros[0];
+            var menor = numeros[0];
+
+            for (var i = 1; i < numeros.length; i++) {
+                if (numeros[i] > mayor) {
+                    mayor = numeros[i];
+                }
+                if (numeros[i] < menor) {
+                    menor = numeros[i];
+                }
+            }
+
+            document.getElementById("resultado").innerHTML = "El número mayor es " + mayor + " y el número menor es " + menor + ".";
+        }
+    </script>
+</body>
+
+</html>

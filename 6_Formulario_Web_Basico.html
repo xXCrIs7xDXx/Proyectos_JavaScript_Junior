@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>Formulario WEB básico</h1>
+
+    <form id="myForm">
+        Nombre:
+        <input type="text" id="name" placeholder="Nombre de Usuario...">
+        <br> <br>
+        Dirección e-mail:
+        <input type="text" id="email">
+        <br> <br>
+        Ciudad:
+        <select id="city">
+            <option value="" id="a">Seleccione Ciudad...</option>
+            <option value="La Paz">La Paz</option>
+            <option value="Cochabamba">Cochabamba</option>
+            <option value="Santa Cruz">Santa Cruz</option>
+        </select>
+
+        <br> <br>
+        Aficiones:<br>
+        <input type="checkbox" id="sports" name="hobbies" value="Deportes">
+        <label for="sports"> Deportes</label><br>
+        <input type="checkbox" id="cars" name="hobbies" value="Coches">
+        <label for="cars"> Coches</label><br>
+        <input type="checkbox" id="music" name="hobbies" value="Música">
+        <label for="music"> Música</label><br><br>
+        Sexo:<br>
+        <input type="radio" id="male" name="gender" value="Masculino">
+        <label for="male">Masculino</label><br>
+        <input type="radio" id="female" name="gender" value="Femenino">
+        <label for="female">Femenino</label><br><br>
+        <input type="button" value="Enviar formulario" onclick="myFunction()">
+        <input type="reset" value="Limpiar formulario">
+    </form>
+
+    <p id="demo"></p>
+
+    <script>
+        function myFunction() {
+            var form = document.getElementById("myForm");
+            var text = "";
+
+            // Nombre
+            if (form.name.value) {
+                text += "Nombre: " + form.name.value + "<br>";
+            }
+
+            // Ciudad
+            if(form.city.value) {
+                text += "Ciudad: " + form.city.value + "<br>";
+            }
+            
+
+            // Email
+            if (form.email.value) {
+                text += "Email: " + form.email.value + "<br>";
+            }
+
+            // Aficiones
+            if (form.sports.checked || form.cars.checked || form.music.checked) {
+                text += "Aficiones: ";
+
+                if (form.sports.checked) {
+                    text += form.sports.value + ", ";
+                }
+
+                if (form.cars.checked) {
+                    text += form.cars.value + ", ";
+                }
+
+                if (form.music.checked) {
+                    text += form.music.value;
+                }
+            }
+
+
+            text += "<br>";
+
+            // Sexo
+            var gender = document.querySelector('input[name = "gender"]:checked');
+
+            if (gender) {
+                text += "Sexo: " + gender.value;
+            }
+
+            document.getElementById("demo").innerHTML = text;
+        }
+    </script>
+
+</body>
+
+</html>

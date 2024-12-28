@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Notas de los estudiantes</h2>
+
+<button onclick="mostrarNotas()">Mostrar notas</button>
+
+<p id="resultado"></p>
+
+<script>
+let nombres = [];
+let notas = [];
+
+function ingresarDatos() {
+    let n = prompt("Ingrese el número de estudiantes:");
+    for (let i = 0; i < n; i++) {
+        let nombre = prompt("Ingrese el nombre del estudiante " + (i + 1) + ":");
+        let nota = prompt("Ingrese la nota del estudiante " + (i + 1) + ":");
+        nombres.push(nombre);
+        notas.push(parseInt(nota));
+    }
+}
+
+function mostrarNotas() {
+    ingresarDatos();
+    let maxNota = Math.max(...notas);
+    let minNota = Math.min(...notas);
+    let estudianteMaxNota = nombres[notas.indexOf(maxNota)];
+    let estudianteMinNota = nombres[notas.indexOf(minNota)];
+    document.getElementById("resultado").innerHTML = "El estudiante con la nota más alta es " + estudianteMaxNota + " con una nota de " + maxNota + ". El estudiante con la nota más baja es " + estudianteMinNota + " con una nota de " + minNota;
+}
+</script>
+
+</body>
+</html>

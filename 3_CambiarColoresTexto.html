@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Cambiar color de texto</h2>
+
+<p id="texto">¡Hola, mundo!</p>
+
+<button onclick="cambiarColor()">Cambiar color</button>
+
+<script>
+function cambiarColor() {
+    let colores = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+    let colorAleatorio = colores[Math.floor(Math.random() * colores.length)];
+    document.getElementById("texto").style.color = colorAleatorio;
+}
+</script>
+
+</body>
+</html>
